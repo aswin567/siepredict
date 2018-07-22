@@ -1,0 +1,18 @@
+
+
+.example-card{
+    width: 16%;
+    min-width: 250px;
+    float: left;
+    margin: 15px;
+    height: 323px;
+}
+.process-image{
+    width: 54%;
+}
+
+.process-name{
+    font-size: 25px;
+    font-weight: bold;
+    color: #0194ad;
+}

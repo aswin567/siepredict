@@ -1,0 +1,59 @@
+
+.scoller{
+  margin-top: 10px;
+  background: #fff;
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.table{
+  margin: 10px 0;
+  position: relative;
+  overflow: auto;
+}
+
+.expired-mlfb{
+  display: inline-block;
+  padding-left: 63px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-weight: 500;
+  color: #941818;
+  font-size: 18px;
+}
+
+.expired-icon{
+  margin-right: 11px;
+}
+
+.expired-hd{
+  position: absolute;
+  background: #941818;
+  color: #fff;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  padding: 3px 17px;
+  z-index: 2;
+
+}
+
+marquee{
+  padding: 22px 0;
+  position: relative;
+}
+
+marquee::after{
+  content: 'Expired MLFBS';
+  position: absolute;
+  top: 4px;
+  background: #941818;
+  padding: 22px;
+  font-size: 19px;
+  color: #fff;
+  font-weight: bold;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}

@@ -1,0 +1,61 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="back-btn pointer" routerLink="../dashboard">
+        <fa name="angle-left" size="2x" ></fa>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="notification" [matMenuTriggerFor]="appMenu">
+        <fa name="bell" size="lg" matBadge="3" matBadgeColor="warn"></fa>
+      </div>
+      <mat-menu #appMenu="matMenu">
+        <div class="notification-item">
+          <div class="notif-icon">
+  
+            <fa name="exclamation-circle" size="lg"></fa>
+          </div>
+          <div class="text">
+            <div class="hd">MLFB Number</div>
+            <div class="msg">Message</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="notification-item">
+          <div class="notif-icon">
+  
+            <fa name="exclamation-circle" size="lg"></fa>
+          </div>
+          <div class="text">
+            <div class="hd">MLFB Number</div>
+            <div class="msg">Message</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="notification-item">
+          <div class="notif-icon">
+  
+            <fa name="exclamation-circle" size="lg"></fa>
+          </div>
+          <div class="text">
+            <div class="hd">MLFB Number</div>
+            <div class="msg">Message</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </mat-menu>
+    <span class="app-name"> <span class="app-heighlite">Sie</span>predict</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="full-width process-list">
+  <mat-card class="example-card pointer" *ngFor="let process of $processList | async"  routerLink="../mlFb" [@itemAnim]>
+    <mat-card-header>
+      <mat-card-title class="process-name">{{process.name}}</mat-card-title>
+      <mat-card-subtitle>{{process.sub}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image class="process-image" src="./assets/images/{{process.img}}.png" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>{{process.des}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

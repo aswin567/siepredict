@@ -1,0 +1,30 @@
+.predictorHd{
+  font-weight: 400;
+  font-size: 22px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  position: relative;   
+   border-bottom: 1px solid #c5c4c4;
+  padding-bottom: 17px;
+}
+
+.predictorHd::before{
+  content: '';
+  position: absolute;
+  height: 116%;
+  background: #016a7b;
+  width: 6px;
+  left: -13px;
+  top: -6px;
+}
+
+.example-card {    
+  max-width: 240px;
+  float: left;
+  margin: 12px;
+  color: #cc3333;
+}
+
+.example-header-image {
+  background-image: url('/assets/images/mpex.png');
+  background-size: cover;
+}

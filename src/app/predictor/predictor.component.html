@@ -1,0 +1,17 @@
+<h3 class="predictorHd">Predict MLFB Expiry</h3>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="onDateChange($event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<div class="card-container">
+  <mat-card class="example-card" *ngFor="let expired of expiredData">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="bold">{{expired.ArticleNumber}}</mat-card-title>
+      <mat-card-subtitle>{{expired.PLMEffectiveDate}}</mat-card-subtitle>
+    </mat-card-header>
+    </mat-card>
+</div>

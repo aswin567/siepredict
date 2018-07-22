@@ -1,0 +1,92 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="back-btn pointer" routerLink="../process">
+      <fa name="cog" size="2x" animation="spin"></fa>
+    </div>
+    <span class="example-spacer"></span>
+
+    <div class="back-btn pointer" (click)="openModal()">
+      <fa name="bolt" size="2x"></fa>
+    </div>
+    
+    <span class="example-spacer"></span>
+    <div class="notification" [matMenuTriggerFor]="appMenu">
+      <fa name="bell" size="lg" matBadge="3" matBadgeColor="warn"></fa>
+    </div>
+    <mat-menu #appMenu="matMenu">
+      <div class="notification-item">
+        <div class="notif-icon">
+
+          <fa name="exclamation-circle" size="lg"></fa>
+        </div>
+        <div class="text">
+          <div class="hd">MLFB Number</div>
+          <div class="msg">Message</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="notification-item">
+        <div class="notif-icon">
+
+          <fa name="exclamation-circle" size="lg"></fa>
+        </div>
+        <div class="text">
+          <div class="hd">MLFB Number</div>
+          <div class="msg">Message</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="notification-item">
+        <div class="notif-icon">
+
+          <fa name="exclamation-circle" size="lg"></fa>
+        </div>
+        <div class="text">
+          <div class="hd">MLFB Number</div>
+          <div class="msg">Message</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </mat-menu>
+    <span class="app-name">
+      <span class="app-heighlite">Sie</span>predict</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="scoller">
+    <marquee behavior="scroll" direction="left">
+      <div class="expired-mlfb" *ngFor="let expiredMlfb of expiredMlfbList">
+        <fa class="expired-icon" name="fire"></fa>{{expiredMlfb.ArticleNumber}}</div>
+    </marquee>
+  </div>
+<div class="table" [style.max-height]="mobHeight">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="ArticleNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Article Number </th>
+      <td mat-cell *matCellDef="let element" [class.redBg]="element.ProductLifecycle!=='PM300:Active Product'" [class.yellowBg]="element.ArticleNumber == '7NG3242-0BA10'"> {{element.ArticleNumber}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="ProductFamily">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Family </th>
+      <td mat-cell *matCellDef="let element" [class.redBg]="element.ProductLifecycle!=='PM300:Active Product'"  [class.yellowBg]="element.ArticleNumber == '7NG3242-0BA10'"> {{element.ProductFamily}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="ProductLifecycle">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Lifecycle </th>
+      <td mat-cell *matCellDef="let element" [class.redBg]="element.ProductLifecycle!=='PM300:Active Product'" [class.yellowBg]="element.ArticleNumber == '7NG3242-0BA10'"> {{element.ProductLifecycle}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="PLMEffectiveDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> PLM Effective Date </th>
+      <td mat-cell *matCellDef="let element" [class.redBg]="element.ProductLifecycle!=='PM300:Active Product'" [class.yellowBg]="element.ArticleNumber == '7NG3242-0BA10'"> {{element.PLMEffectiveDate}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

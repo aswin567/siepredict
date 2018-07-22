@@ -1,0 +1,26 @@
+[
+    {
+        "name":"CATALYTIC REFORMING UNIT",
+        "des":"Converts the desulfurized naphtha molecules into higher-octane molecules to produce reformate, which is a component of the end-product gasoline or petrol.",
+        "img":"process1",
+        "sub":"CRU-1"
+    },
+    {
+        "name":"Isomerization unit",
+        "des":"Converts linear molecules such as normal pentane into higher-octane branched molecules for blending into the end-product gasoline. Also used to convert linear normal butane into isobutene for use in the alkylation unit.",
+        "img":"process2",
+        "sub":"IU-2"
+    },
+    {
+        "name":"FLUID CATALYTIC CRACKING UNIT",
+        "des":"Chemical coagulation, flocculation, sedimentation, filtration, and disinfection.",
+        "img":"process3",
+        "sub":"FCC-3"
+    },
+    {
+        "name":"VISBREAKER UNIT ",
+        "des":"Upgrades heavy residual oils from the vacuum distillation unit by thermally cracking them into lighter, more valuable reduced viscosity products.",
+        "img":"process4",
+        "sub":"VU-4"
+    }
+    ]

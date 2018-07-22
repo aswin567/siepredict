@@ -1,0 +1,80 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="back-btn pointer" routerLink="../process">
+      <fa name="angle-left" size="2x"></fa>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="notification" [matMenuTriggerFor]="appMenu">
+      <fa name="bell" size="lg" matBadge="3" matBadgeColor="warn"></fa>
+    </div>
+    <mat-menu #appMenu="matMenu">
+      <div class="notification-item">
+        <div class="notif-icon">
+
+          <fa name="exclamation-circle" size="lg"></fa>
+        </div>
+        <div class="text">
+          <div class="hd">MLFB Number</div>
+          <div class="msg">Message</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="notification-item">
+        <div class="notif-icon">
+
+          <fa name="exclamation-circle" size="lg"></fa>
+        </div>
+        <div class="text">
+          <div class="hd">MLFB Number</div>
+          <div class="msg">Message</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="notification-item">
+        <div class="notif-icon">
+
+          <fa name="exclamation-circle" size="lg"></fa>
+        </div>
+        <div class="text">
+          <div class="hd">MLFB Number</div>
+          <div class="msg">Message</div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </mat-menu>
+    <span class="app-name">
+      <span class="app-heighlite">Sie</span>predict</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="full-width process-list">
+  <mat-card class="example-card pointer" [class.heightAuto]="selectedId ===i" *ngFor="let mlfb of $mlfbList | async; let i=index"
+    (click)="onSelection(i)" [@itemAnim]>
+    <mat-card-header>
+      <mat-card-title class="mlfb-name">{{mlfb.ArticleNumber}}</mat-card-title>
+      <mat-card-subtitle>{{mlfb.ProductFamily}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="status" [matTooltip]="mlfb.ProductLifecycle">
+      <span *ngIf="mlfb.ProductLifecycle === 'PM300:Active Product'">
+        <img src="/assets/images/mp.png" class="mp" *ngIf="mlfb.PLMEffectiveDate === ''">
+        <span *ngIf="mlfb.ProductLifecycle === 'PM300:Active Product' && mlfb.PLMEffectiveDate!== ''">
+          <img src="/assets/images/mpbex.png" class="mp">
+          <fa class="expired yellow" name="exclamation-circle" size="2x"></fa>
+        </span>
+
+      </span>
+      <span *ngIf="mlfb.ProductLifecycle !== 'PM300:Active Product'">
+
+        <img src="/assets/images/mpex.png" class="mp">
+        <!-- <fa class="inActive" name="microchip" size="5x"></fa> -->
+        <fa class="expired" name="exclamation-circle" size="2x"></fa>
+      </span>
+      <span>
+
+      </span>
+    </div>
+    <mat-card-content *ngIf="selectedId ===i">
+      <p class="description">{{mlfb.ProductDescription}}</p>
+      <p *ngIf="mlfb.PLMEffectiveDate" class="effectiveDate">{{mlfb.PLMEffectiveDate}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

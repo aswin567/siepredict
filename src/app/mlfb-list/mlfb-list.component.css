@@ -1,0 +1,59 @@
+.example-card{
+    width: 15%;
+    min-width: 190px;
+    float: left;
+    text-align: center;
+    margin: 20px;
+    height: 320px;
+}
+
+.active{
+    color: #53a253;
+}
+.inActive{
+    color: #b5b2b2;
+}
+
+.status{
+    display: inline-block;
+    position: relative;
+}
+.mlfb-name{
+    font-weight: bold;
+}
+.expired{
+    color: #e42a2a;
+    position: absolute;
+    right: -3px;
+    bottom: -8px;
+}
+.example-tooltip-red {
+    background: #b71c1c;
+}
+
+.description{    
+    text-align: left;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #9a9999;
+}
+
+.effectiveDate{
+    color: #b71c1c;
+    font-weight: 600;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.mp{
+    width: 100%;
+}
+
+.yellow{
+    color: #e48a2a
+}
+
+.heightAuto{
+    height: auto !important;
+}
