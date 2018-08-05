@@ -13,13 +13,16 @@ import { MatToolbarModule, MatMenuModule, MatBadgeModule, MatIconModule, MatCard
 import { AppService } from './app.service';
 import { ProcessService} from './process/process.service';
 import { PredictorComponent } from './predictor/predictor.component';
+import { SecondLevelModalComponent } from './second-level-modal/second-level-modal.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ProcessComponent,
     MlfbListComponent,
-    PredictorComponent
+    PredictorComponent,
+    SecondLevelModalComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { PredictorComponent } from './predictor/predictor.component';
     AppRoutingModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
+    FormsModule,
 
     MatToolbarModule,
     MatIconModule,
@@ -43,7 +47,8 @@ import { PredictorComponent } from './predictor/predictor.component';
     MatNativeDateModule,
   ],
   entryComponents:[
-    PredictorComponent
+    PredictorComponent,
+    SecondLevelModalComponent
   ],
   providers: [
     AppService,

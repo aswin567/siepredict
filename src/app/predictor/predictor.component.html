@@ -15,3 +15,10 @@
     </mat-card-header>
     </mat-card>
 </div>
+<mat-form-field>
+  <input matInput [(ngModel)]="operand" placeholder="What's your Operand?">
+</mat-form-field>
+<button (click)="openModal()">NewModal</button>
+<div>
+  Your source is  {{source}}
+</div>
